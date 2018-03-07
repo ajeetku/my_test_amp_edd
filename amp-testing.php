@@ -26,3 +26,7 @@ define( 'AMP_TESTING_ITEM_NAME', 'Advanced Testing Ads' );
 define( 'AMP_TESTING_LICENSE_PAGE', 'amp-testing-license' );
 
 #echo all commits 
+
+function caller_admin_user(){
+	$counting = 1+2;
+}
