@@ -1,8 +1,8 @@
 <?php
 /*
-Plugin Name: AMP Testing
+Plugin Name: my amp edd Testing
 Description: AMP Extension Test Update, License & Git Integration
-Version: 1.0
+Version: 0.0.1
 Author URI: http://ampforwp.com
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -11,11 +11,11 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 if ( ! defined( 'AMP_TESTING_VERSION' ) ) {
-	define( 'AMP_TESTING_VERSION', '1.0' );
+	define( 'AMP_TESTING_VERSION', '0.0.1' );
 }
 
 // this is the URL our updater / license checker pings. This should be the URL of the site with EDD installed
-define( 'AMP_TESTING_STORE_URL', 'https://magazine3.com/garage/' ); // you should use your own CONSTANT name, and be sure to replace it throughout this file
+define( 'AMP_TESTING_STORE_URL', 'https://wordpress-amp.000webhostapp.com' ); // you should use your own CONSTANT name, and be sure to replace it throughout this file
 
 // the name of your product. This should match the download name in EDD exactly
 define( 'AMP_TESTING_ITEM_NAME', 'Advanced Testing Ads' );
