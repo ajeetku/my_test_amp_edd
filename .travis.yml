@@ -129,7 +129,3 @@ script:
     travis_time_finish && travis_fold end "PHP.coverage"
   fi
 
-
-after_script:
-  - if [[ "$COVERAGE" == "1" ]]; then ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT; fi
-
