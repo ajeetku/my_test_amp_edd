@@ -10,8 +10,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-if ( ! defined( 'AMP_TESTING_VERSION' ) ) {
-	define( 'AMP_TESTING_VERSION', '0.0.1' );
+if (!defined('AMP_TESTING_VERSION')) {
+	define('AMP_TESTING_VERSION','0.0.1');
 }
 
 // this is the URL our updater / license checker pings. This should be the URL of the site with EDD installed
