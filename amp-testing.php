@@ -27,6 +27,11 @@ define( 'AMP_TESTING_LICENSE_PAGE', 'amp-testing-license' );
 
 #echo all commits 
 
-function caller_admin_user(){
+function callerAdminUser(){
 	$counting = 1+2;
 }
+echo "cdscsd";
+if($test==1){
+	echo "flow";
+}
+
