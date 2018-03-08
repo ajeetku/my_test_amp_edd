@@ -1,68 +1,47 @@
-sudo: false
-dist: trusty
+# Main Travis CI configuration file for wordpress-plugin tests
+# https://github.com/benbalter/wordpress-plugin-tests
+
+# Tell Travis CI we're using PHP
 language: php
 
-notifications:
-  on_success: never
-  on_failure: change
-  email:
-    on_success: never
-    on_failure: change
-
-matrix:
-  include:
-    - php: 7.2
-      env: WP_VERSION=latest WP_TRAVISCI=phpcs
-    - php: 7.1
-      env: WP_VERSION=latest WP_TRAVISCI=phpcs
-    - php: 7.0
-      env: WP_VERSION=latest WP_TRAVISCI=phpcs
-    - php: 5.6
-      env: WP_VERSION=4.4 WP_TRAVISCI=phpcs
-    - php: 5.6
-      env: WP_VERSION=latest WP_TRAVISCI=phpcs
-    - php: 5.6
-      env: WP_VERSION=trunk WP_TRAVISCI=phpcs
-    - php: 5.6
-      env: WP_TRAVISCI=phpcs WP_VERSION=latest
-    - php: 5.3
-      env: WP_VERSION=latest WP_TRAVISCI=phpcs
-      dist: precise
-
-
-env:
-  - WP_PROJECT_TYPE=plugin $WP_VERSION WP_MULTISITE=0 WP_TEST_URL=http://localhost:12000 WP_TEST_USER=test WP_TEST_USER_PASS=test
-
-matrix:
-  allow_failures:
-    - php: nightly
-
-before_script:
-  - '! find . -type f -name "*.php" -exec php -d error_reporting=32767 -l {} \; 2>&1 >&- | grep "^"'
-  - export PATH="$HOME/.composer/vendor/bin:$PATH"
-  - |
-    if [ -f ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini ]; then
-      phpenv config-rm xdebug.ini
-    else
-      echo "xdebug.ini does not exist"
-    fi
-  - |
-    if [[ ! -z "$WP_VERSION" ]] ; then
-      bash bin/install-wp-tests.sh wordpress_test root '' localhost $WP_VERSION
-      composer global require "phpunit/phpunit=4.8.*|5.7.*"
-    fi
+# Versions of PHP to test against
+php:
+  - "7.0"
+  - "5.6"
+  - "5.5"
+  - "5.4"
+  - "5.3"
+  # Current $required_php_version for WordPress: 5.2.4
+  - "5.2"
   
-  - echo "Running Code Sniffer. phpcs"
+# Specify versions of WordPress to test against
+# WP_VERSION = WordPress version number (use "master" for SVN trunk)
+# WP_MULTISITE = whether to test multisite (use either "0" or "1")
+env:
+    - WP_VERSION=master WP_MULTISITE=0
+    - WP_VERSION=3.4.1 WP_MULTISITE=0
+    - WP_VERSION=3.3.2 WP_MULTISITE=0
+    - WP_VERSION=3.2.1 WP_MULTISITE=0 
+    - WP_VERSION=master WP_MULTISITE=1
+    - WP_VERSION=3.4.1 WP_MULTISITE=1
+    - WP_VERSION=3.3.2 WP_MULTISITE=1 
+    - WP_VERSION=3.2.1 WP_MULTISITE=1
+
+# Grab the setup script and execute
+before_script:
+    - wget https://raw.github.com/benbalter/wordpress-plugin-tests/setup/setup.sh
+    - source setup.sh
+
   - composer global require wp-coding-standards/wpcs
   - phpcs --config-set installed_paths $HOME/.composer/vendor/wp-coding-standards/wpcs
-script:
-  - |
-    if [[ ! -z "$WP_VERSION" ]] ; then
-      phpunit
-      WP_MULTISITE=1 phpunit
-    fi
-  - phpcbf -n -p -v .
-  #- phpcs .
+script: phpunit
+  - phpcbf .
+  - phpcs .
   #- phpcs --standard=WordPress .
-  #- phpcs -p -s -v -n --standard=WordPress .
-  
+  - phpcs -p -s -v -n --standard=WordPress .
+
+# wordpress-plugin-tests specific config
+# Tells Travis CI not to run unit tests against the setup branch
+branches:
+  except:
+    - setup
