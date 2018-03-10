@@ -26,6 +26,7 @@ define( 'AMP_TESTING_ITEM_NAME', 'Advanced Testing Ads' );
 define( 'AMP_TESTING_LICENSE_PAGE', 'amp-testing-license' );
 echo strtoupper("Commands check");
 echo strtoupper("Commands check 2 : Ticket 11");
+echo strtoupper("Commands check 2 : Ticket 12");
 
 
 
