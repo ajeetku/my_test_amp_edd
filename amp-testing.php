@@ -27,6 +27,7 @@ define( 'AMP_TESTING_LICENSE_PAGE', 'amp-testing-license' );
 echo "Added new text";
 echo "Added new text";
 echo "Added new text";
+echo "For test";
 
 
 
