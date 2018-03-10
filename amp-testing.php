@@ -24,17 +24,8 @@ define( 'AMP_TESTING_ITEM_NAME', 'Advanced Testing Ads' );
 //define( 'AMP_ITEM_ID', 2502 );
 // the name of the settings page for the license input to be displayed
 define( 'AMP_TESTING_LICENSE_PAGE', 'amp-testing-license' );
-echo strtoupper("Added new text");
-echo strtoupper("Added new text");
-echo strtoupper("Added new text");
-echo strtoupper("For test");
-echo strtoupper("check for ticket 5");
-echo strtoupper("check for ticket 5");
-echo strtoupper("check for ticket 5");
+echo strtoupper("Commands check");
 
-echo strtoupper("check for ticket 5 another");
-echo ucfirst("manuall test");
-echo ucfirst("manually checking title test added");
 
 
 
