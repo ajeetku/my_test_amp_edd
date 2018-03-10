@@ -25,6 +25,9 @@ define( 'AMP_TESTING_ITEM_NAME', 'Advanced Testing Ads' );
 // the name of the settings page for the license input to be displayed
 define( 'AMP_TESTING_LICENSE_PAGE', 'amp-testing-license' );
 echo "Added new text";
+echo "Added new text";
+echo "Added new text";
+
 
 
 if ( defined( 'AMPFORWP_PLUGIN_DIR' ) ) {
