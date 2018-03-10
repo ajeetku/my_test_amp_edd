@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 if (!defined('AMP_TESTING_VERSION')) {
 	define('AMP_TESTING_VERSION','0.0.1');
 }
-/*
+
 // this is the URL our updater / license checker pings. This should be the URL of the site with EDD installed
 define( 'AMP_TESTING_STORE_URL', 'https://wordpress-amp.000webhostapp.com' ); // you should use your own CONSTANT name, and be sure to replace it throughout this file
 
@@ -24,8 +24,9 @@ define( 'AMP_TESTING_ITEM_NAME', 'Advanced Testing Ads' );
 //define( 'AMP_ITEM_ID', 2502 );
 // the name of the settings page for the license input to be displayed
 define( 'AMP_TESTING_LICENSE_PAGE', 'amp-testing-license' );
+echo "Added new text";
 
-*/
+
 if ( defined( 'AMPFORWP_PLUGIN_DIR' ) ) {
 	add_filter( 'plugin_action_links', 'ampforwp_settings_link', 10, 5 );
 } else {
