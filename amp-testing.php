@@ -25,6 +25,7 @@ define( 'AMP_TESTING_ITEM_NAME', 'Advanced Testing Ads' );
 // the name of the settings page for the license input to be displayed
 define( 'AMP_TESTING_LICENSE_PAGE', 'amp-testing-license' );
 echo strtoupper("Commands check");
+echo strtoupper("Commands check 2 : Ticket 11");
 
 
 
