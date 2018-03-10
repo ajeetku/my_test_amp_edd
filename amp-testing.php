@@ -29,6 +29,9 @@ echo strtoupper("Added new text");
 echo strtoupper("Added new text");
 echo strtoupper("For test");
 echo strtoupper("check for ticket 5");
+echo strtoupper("check for ticket 5");
+echo strtoupper("check for ticket 5");
+
 echo strtoupper("check for ticket 5 another");
 echo ucfirst("manuall test");
 echo ucfirst("manually checking title test added");
