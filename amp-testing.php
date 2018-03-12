@@ -14,6 +14,7 @@ if (!defined('AMP_TESTING_VERSION')) {
 	define('AMP_TESTING_VERSION','0.0.1');
 }
 
+echo "sdcsdc";die;
 // this is the URL our updater / license checker pings. This should be the URL of the site with EDD installed
 define( 'AMP_TESTING_STORE_URL', 'https://wordpress-amp.000webhostapp.com' ); // you should use your own CONSTANT name, and be sure to replace it throughout this file
 
