@@ -26,6 +26,12 @@ if(function_exists('reflected_clear_success_test')){
 	}
 }
 
+if(function_exists('reflected_clear_success_other')){
+	function reflected_clear_success_other(){
+		echo "hello 123";
+	}
+}
+
 // this is the URL our updater / license checker pings. This should be the URL of the site with EDD installed
 define( 'AMP_TESTING_STORE_URL', 'https://wordpress-amp.000webhostapp.com' ); // you should use your own CONSTANT name, and be sure to replace it throughout this file
 
